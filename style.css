@@ -1,168 +1,118 @@
+@charset "UTF-8";
 
-nav {
-    display: block;
-    position: fixed;
-    background-color: #ffffff;
-    width: 220px;
-    top: 0;
-    left: -300px;
-    bottom: 0;
-    transition: all 0.5s;
-    z-index: 3;
-    opacity: 0;
-  }
-  
-  .open nav {
-    left: 0;
-    opacity: 1;
-  }
-  
-  nav .inner {
-    padding: 25px;
-  }
-  
-  nav .inner ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav .inner ul li {
-    margin: 0;
-    border-bottom: 1px solid rgb(255, 255, 255);
-    border-bottom: 1px solid #333;
-  }
-  
-  nav .inner ul li a {
-    display: block;
-    color: #333;
-    font-size: 14px;
-    padding: 1rem;
-    text-decoration: none;
-    transition-duration: 0.2s;
-  }
-  
-  nav .inner ul li a:hover {
-    background: #e4e4e4;
-  }
-.toggle-btn {
-    display: block;
-    position: fixed;
-    top: 30px;
-    right: 30px;
-    width: 30px;
-    height: 30px;
-    z-index: 3;
-    cursor: pointer;
-  }
-  
-  .toggle-btn span {
-    position: absolute;
-    display: block;
-    left: 0;
-    width: 30px;
-    height: 2px;
-    background-color: rgb(255, 255, 255);
-    transition: all 0.5s;
-    border-radius: 4px;
-  }
-  
-  .toggle-btn span:nth-child(1) {
-    top: 4px;
-  }
-  .toggle-btn span:nth-child(2) {
-    top: 14px;
-  }
-  .toggle-btn span:nth-child(3) {
-    bottom: 4px;
-  }
-  
-  .open .toggle-btn span {
-    background-color: #fff;
-  }
-  
-  .open .toggle-btn span:nth-child(1) {
-    transform: translateY(10px) rotate(-315deg);
-  }
-  
-  .open .toggle-btn span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .open .toggle-btn span:nth-child(3) {
-    transform: translateY(-10px) rotate(315deg);
-  }
-  
-  #mask {
-    display: none;
-    transition: all 0.5s;
-  }
-  
-  .open #mask {
-    display: block;
-    background: #000;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
-    opacity: 0.8;
-    z-index: 2;
-    cursor: pointer;
-  }
-  .slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgb(0, 0, 0);
-    z-index: -1;
-}
 
-section {
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero {
-    height: 60%;
-    width: 100%;
-    position: relative;
-}
-
-.hero img {
- height: 100%;
- width: 100%;
- object-fit: cover;
+* {
+    font-family: 'Kdam Thmor Pro', sans-serif;
 }
 
 
-.hero::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: black;
-    width: 100%;
-    height: 100%;
-    opacity: 0.4;
+
+/*==================================================
+ギャラリーのためのcss
+===================================*/
+
+/*＝＝＝並び替えボタンのCSS*/
+.sort-btn{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding:50px 20px;
 }
 
-.headline {
-    position: absolute;
-    top: 60%;
-    left: 10%;
-    font-size: 100px;
-    color: white;
-    transform: translateY(-10%, -70%);
-    z-index: 3;
+.sort-btn li{
+  background:#eee;
+  border-radius:10px;
+  cursor: pointer;
+  padding: 10px;
+  margin:0 10px;
+}
+
+.sort-btn li.active{/*ボタンに現在地＝activeというクラス名がついたら背景色を変更*/
+  background:#ccc;  
+}
+
+/*横幅が480px以下になった際の指定*/
+@media only screen and (max-width: 480px) {
+.sort-btn{
+  justify-content: space-between;
+}
+  
+.sort-btn li{
+  width:48%;
+  margin:0 0 10px 0;
+  text-align:center;
+  } 
+}
+
+/*＝＝＝Muuriのレイアウトのための調整 */
+.grid {
+  position: relative;/*並び替えの基準点を指定*/
+}
+
+/*各画像の横幅などの設定*/
+.item {
+  display: block;
+  position: absolute;
+  width: 33%;/*横並びで3つ表示*/
+  z-index: 1;
+}
+
+/*内側のボックスの高さが崩れないように維持*/
+.item-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/*画像の横幅を100%にしてレスポンシブ化*/
+.grid img{
+  width:100%;
+  height:auto;
+  vertical-align: bottom;/*画像の下にできる余白を削除*/
+}
+
+/*横幅が768px以下になった際の指定*/
+@media only screen and (max-width: 768px) {
+.item {
+  width: 49.5%;/*横並びで2つ表示*/
+}
+}
+
+/*＝＝＝fancyboxサムネイル背景と画像選択時の枠線の指定*/
+.fancybox-thumbs {
+    background: transparent!important;
+}
+
+.fancybox-thumbs__list a:before {
+    border: 6px solid #FA999B;
 }
 
 
-#logo {
-    color: white;
+/*========= レイアウトのためのCSS ===============*/
+ul{
+  margin:0;
+  padding: 0;
+  list-style: none;
+}
+
+a{
+  color: #333;
+}
+
+a:hover,
+a:active{
+  text-decoration: none;
+}
+
+h1{
+  text-align: center;
+  font-size:6vw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin:30px 0;
+}
+
+p{
+  margin:0 10px 10px 10px;
+  word-wrap : break-word;
 }

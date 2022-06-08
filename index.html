@@ -1,28 +1,46 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <title>Kohta Portfolio Site</title>
     <meta charset="UTF-8">
+    <meta name="description" content="このウェブサイトではエンジニアKohtaについて知ることができます。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/logo-fav.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    <!-- FONT AREA -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+
+    <!-- レイアウト保持　独自CSS -->
+    <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/css/6-2-2.css">
 </head>
 
 <body>
+    <!-- START HEADER AREA -->
     <header>
-          <h3 id="logo">Kohta <br>Portfolio Site</h2>
+        <h3 id="logo">Kohta<br>Portfolio Site</h3>
             <div id="navArea">
                 <nav>
-                    <div class="inner">
-                        <ul>
-                            <li><a href="#Home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="#">Works</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-               </nav>
+                    <ul>
+                        <li><a href="#home">HOME</a></li>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#profile">PROFILE</a></li>
+                        <li><a href="#works">WORKS</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </nav>
 
                 <div class="toggle-btn">
                     <span></span>
@@ -33,21 +51,240 @@
                 <div id="mask"></div>
             </div>
 
-        <section id="Home">
-            <div class="hero">
-              <img src="/images/anas-alshanti-feXpdV001o4-unsplash.jpg" alt="" />
-              <h1 class="headline">My Portfolio</h1>
-              
+            <section id="home">
+                <div class="hero">
+                    <img src="img/hero-area-image.jpg" alt="home画面用画像 キーボード写真">
+                    <h1 class="headline">My Portfolio</h1>
+                </div>
+            </section>
+    </header>
+    <!-- END HEADER AREA -->
+
+    <!-- START ABOUT AREA-->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="content">
+                <div class="about-image">
+                    <img src="img/about-image.png" alt="about-area-image プログラミング画面の画像">
+                </div> 
+                <div class="text-box">
+                    <h3>ABOUT</h3>
+                     <p>
+                        ここはエンジニアKohtaのポートフォリオサイトです。<br>
+                        Kohtaの今までのプログラミング勉強、また成長を見ることができます。<br>
+                        実際に作成したサービス、身に付けているスキルなど可視化できるようになっています。
+                     </p>
+                </div>
             </div>
-        </section>
-      </header>
+        </div>
+
+    </section>
+    <!-- END ABOUT AREA -->
+
+    <!-- START PROFILE AREA -->
+    <section id="profile" class="profile">
+        <div class="container">
+            <div class="section-title">PROFILE</div>
+            <div class="content">
+                <div class="image">
+                    <img src="/img/profile-image.jpg" alt="profile-area-image 円の画像">
+                </div>
+                <div class="info">
+                    <h4 class="info-title">Kohta Kochi</h4>
+                    <p>
+                        2003年   東京都出身<br>
+                        2018年   プログラミングを知人に教えてもらい興味を持つ<br>
+                        2019年   興味はあったが高校受験のため距離を取る<br>
+                        2020年   高校生活を謳歌しプログラミングから遠ざかる<br>
+                        2021年   知人と大学で起業をすると決意、SEという職業を知る<br>
+                        2021年   プロゲート有料登録、Udemy講座購入をし、どハマりする<br>
+                        <br>
+                        ~現在   将来の起業のためにスキルと知識を溜めている最中
+                      </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END PROFILE AREA -->
+
+    <!-- START WORKS AREA -->
+    <section id="works" class="works">
+        <div class="wrapper">
+
+            <ul class="sort-btn">
+                <li class="sort00 active">全て</li>
+                <li class="sort01">FrontSide</li>
+                <li class="sort02">BackSide</li>
+                <li class="sort03">Others</li>
+            </ul>
+
+            <ul class="grid">
+                <li class="item sort01">
+                    <div class="item-content">
+                        <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/01.jpg" datafancybox="group1" data-caption="グループ1キャプション">
+                            <img src="img/1.png" alt="">
+                        </a>
+                    </div>
+                </li>
+
+                <li class="item sort02">
+                    <div class="item-content">
+                        <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/01.jpg" datafancybox="group2" data-caption="グループ2キャプション">
+                            <img src="img/2.png" alt="">
+                        </a>
+                    </div>
+                </li>
+
+                <li class="item sort03">
+                    <div class="item-content">
+                        <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/01.jpg" datafancybox="group3" data-caption="グループ3キャプション">
+                            <img src="img/3.png" alt="">
+                        </a>
+                    </div>
+                </li>
+
+                <li class="item sort01">
+                    <div class="item-content">
+                        <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/01.jpg" datafancybox="group1" data-caption="グループ1キャプション">
+                            <img src="img/4.png" alt="">
+                    </div>
+                </li>
+
+                <li class="item sort02">
+                    <div class="item-content">
+                        <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/01.jpg" datafancybox="group2" data-caption="グループ2キャプション">
+                            <img src="img/5.jpg" alt="">
+                    </div>
+                </li>
+
+                <li class="item sort03">
+                    <div class="item-content">
+                        <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/01.jpg" datafancybox="group3" data-caption="グループ3キャプション">
+                            <img src="img/6.jpg" alt="">
+                    </div>
+                </li>
+
+                <li class="item sort01">
+                    <div class="item-content">
+                        <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/01.jpg" datafancybox="group1" data-caption="グループ1キャプション">
+                            <img src="img/7.jpg" alt="">
+                    </div>
+                </li>
+
+                <li class="item sort02">
+                    <div class="item-content">
+                        <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/01.jpg" datafancybox="group2" data-caption="グループ2キャプション">
+                            <img src="img/8.jpg" alt="">
+                    </div>
+                </li>
+
+                <li class="item sort03">
+                    <div class="item-content">
+                        <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/01.jpg" datafancybox="group3" data-caption="グループ3キャプション">
+                            <img src="img/9.jpg" alt="">
+                    </div>
+                </li>
+
+                <li class="item sort01">
+                    <div class="item-content">
+                        <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/01.jpg" datafancybox="group1" data-caption="グループ1キャプション">
+                            <img src="img/10.jpg" alt="">
+                    </div>
+                </li>
+
+                <li class="item sort02">
+                    <div class="item-content">
+                        <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/01.jpg" datafancybox="group2" data-caption="グループ2キャプション">
+                            <img src="img/11.jpg" alt="">
+                    </div>
+                </li> 
+            </ul>
+        </div>
+    </section>
+    <!-- END WORKS AREA -->
+
+    <!-- START CONTACT AREA -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h3 class="section-title">CONTACT</h3>
+        </div>
+        <div class="content">
+            <div class="media-info">
+              <li>
+                <a href="#"><i class="fab facebook"></i> Facebook</a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-youtube"></i> Youtube</a>
+              </li>
+             <!--  <li>
+                <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
+              </li> -->
+            </div>
+            <div class="image">
+              <img src="/images/contact-image.jpg" alt="" />
+            </div>
+          </div>
+    </section>
+    <!-- END CONTACT AREA -->
+
+    <!-- START FOOTER AREA-->
+    <!-- END FOOTER AREA -->
+    
+
+    <!-- JAVASCRIPT AREA -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+      <script>
+        //共通のオプション設定
+        ScrollReveal({
+          reset: true,
+          distance: "60px",
+          duration: 2000, //2sかけてアニメーション
+          delay: 200 /* 0.2s後に発動 */,
+        });
   
-      <div class="slider"></div>
-
-      
-      <section id="about"></section>
-
+        ScrollReveal().reveal(".main-title, .section-title", {
+          delay: 200,
+          origin: "left",
+        });
+        ScrollReveal().reveal(".sec-01 .image, .info", {
+          delay: 600,
+          origin: "bottom",
+        });
+        ScrollReveal().reveal(".text-box", {
+          delay: 700,
+          origin: "right",
+        });
+        ScrollReveal().reveal(".media-icons i", {
+          delay: 500,
+          origin: "bottom",
+          interval: 200,
+        });
+        ScrollReveal().reveal(".sec-02 .image, .sec-03 .image", {
+          delay: 500,
+          origin: "top",
+        });
+        ScrollReveal().reveal(".media-info li", {
+          delay: 500,
+          origin: "left",
+          interval: 200,
+        });
+      </script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" ></script>
     <script src="script.js"></script>
+
+    <!-- START OTHERS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
+    <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/js/6-2-2.js"></script>
+
+
 </body>
 </html>
